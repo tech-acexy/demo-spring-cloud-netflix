@@ -12,7 +12,7 @@
     <modules>
         <module>netflix-eureka-server</module>
         <module>netflix-eureka-client</module>
-        <module>netflix-ribbon-consumer</module>
+        <module>netflix-ribbon-balanced</module>
     </modules>
 
     <properties>

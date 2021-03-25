@@ -1,4 +1,4 @@
-package cn.acexy.tech.springcloud.netflix.ribbon.consumer;
+package cn.acexy.tech.springcloud.netflix.ribbon.balanced;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,9 +12,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class RibbonConsumerApp {
+public class RibbonBalancedApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(RibbonConsumerApp.class, args);
+        SpringApplication.run(RibbonBalancedApp.class, args);
     }
 }

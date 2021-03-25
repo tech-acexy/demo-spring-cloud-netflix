@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ribbon-consumer
+    name: ribbon-balanced
 eureka:
   client:
     service-url:

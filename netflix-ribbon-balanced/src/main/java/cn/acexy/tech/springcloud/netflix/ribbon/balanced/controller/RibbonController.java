@@ -1,4 +1,4 @@
-package cn.acexy.tech.springcloud.netflix.ribbon.consumer.controller;
+package cn.acexy.tech.springcloud.netflix.ribbon.balanced.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +18,8 @@ public class RibbonController {
     @Autowired
     RestTemplate restTemplate;
 
-    @GetMapping(value = "get-consumer")
+    @GetMapping(value = "get-client")
     String getConsumer() {
-        return restTemplate.getForEntity("http://eureka-client/get-client", String.class).getBody();
+        return restTemplate.getForEntity("http://eureka-client/eureka/get-client", String.class).getBody();
     }
 }
