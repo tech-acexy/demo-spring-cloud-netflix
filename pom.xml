@@ -5,13 +5,14 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.acexy.tech.springcloud</groupId>
-    <artifactId>tech-netflix-eureka</artifactId>
+    <artifactId>tech-netflix</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>netflix-eureka-server</module>
         <module>netflix-eureka-client</module>
+        <module>netflix-ribbon-consumer</module>
     </modules>
 
     <properties>
