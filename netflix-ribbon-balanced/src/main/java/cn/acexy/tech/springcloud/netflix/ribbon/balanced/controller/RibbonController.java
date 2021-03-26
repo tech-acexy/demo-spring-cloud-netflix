@@ -19,7 +19,7 @@ public class RibbonController {
     private RestTemplate restTemplate;
 
     @GetMapping(value = "get-client")
-    String getConsumer() {
+    String getClient() {
         return restTemplate.getForEntity("http://eureka-client/eureka/get-client", String.class).getBody();
     }
 }
