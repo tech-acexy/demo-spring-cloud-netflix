@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 public class RibbonController {
 
     @Autowired
-    RestTemplate restTemplate;
+    private RestTemplate restTemplate;
 
     @GetMapping(value = "get-client")
     String getConsumer() {
