@@ -18,8 +18,8 @@ public class RibbonController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping(value = "get-client")
-    String getClient() {
+    @GetMapping(value = "call-eureka-client")
+    String callEurekaClient() {
         return restTemplate.getForEntity("http://eureka-client/eureka/get-client", String.class).getBody();
     }
 }

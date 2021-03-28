@@ -12,9 +12,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class RibbonBalancedApp {
+public class RibbonClientApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(RibbonBalancedApp.class, args);
+        SpringApplication.run(RibbonClientApp.class, args);
     }
 }

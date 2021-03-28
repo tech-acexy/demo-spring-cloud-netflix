@@ -12,7 +12,8 @@
     <modules>
         <module>netflix-eureka-server</module>
         <module>netflix-eureka-client</module>
-        <module>netflix-ribbon-balanced</module>
+        <module>netflix-ribbon-client</module>
+        <module>netflix-hystrix-client</module>
     </modules>
 
     <properties>
