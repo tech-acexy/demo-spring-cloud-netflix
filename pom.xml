@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.acexy.tech.springcloud</groupId>
-    <artifactId>tech-netflix</artifactId>
+    <artifactId>demo-spring-cloud-netflix</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
