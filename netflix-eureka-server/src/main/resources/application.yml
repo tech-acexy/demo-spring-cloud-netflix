@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: acexy-tech.eureka
+    prefer-ip-address: true
   client:
     register-with-eureka: false
     fetch-registry: false
