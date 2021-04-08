@@ -22,7 +22,6 @@ public class EurekaController {
 
     @GetMapping(value = "get-client")
     String getClient() {
-        LOGGER.info("get request");
-        return "client";
+        return  System.getProperty("os.name") + " get your request";
     }
 }

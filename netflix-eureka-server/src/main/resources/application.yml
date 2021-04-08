@@ -2,6 +2,12 @@ server:
   port: 7000
 
 eureka:
+  instance:
+    hostname: acexy-tech.eureka
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      defaultZone: http://acexy-tech.eureka:7000/eureka
+  server:
+    enable-self-preservation: false
