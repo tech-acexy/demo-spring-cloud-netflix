@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.Random;
 
 /**
  * 创建时间 : 2021/3/25 <br />
@@ -20,8 +20,13 @@ public class EurekaController {
 
     final static Logger LOGGER = LoggerFactory.getLogger(EurekaController.class);
 
+    Random random = new Random();
+
     @GetMapping(value = "get-client")
-    String getClient() {
-        return  System.getProperty("os.name") + " get your request";
+    String getClient() throws InterruptedException {
+        int sleepMillis = random.nextInt(3000);
+        LOGGER.info("will sleep ms {} to finish this request", sleepMillis);
+        Thread.sleep(sleepMillis);
+        return System.getProperty("os.name") + " get your request";
     }
 }
