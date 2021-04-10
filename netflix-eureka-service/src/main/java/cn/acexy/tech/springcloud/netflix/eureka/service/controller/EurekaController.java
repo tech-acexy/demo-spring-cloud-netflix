@@ -22,8 +22,8 @@ public class EurekaController {
 
     Random random = new Random();
 
-    @GetMapping(value = "get-client")
-    String getClient() throws InterruptedException {
+    @GetMapping(value = "get-service")
+    String getService() throws InterruptedException {
         int sleepMillis = random.nextInt(3000);
         LOGGER.info("will sleep ms {} to finish this request", sleepMillis);
         Thread.sleep(sleepMillis);

@@ -14,7 +14,7 @@ public class HystrixServiceImpl implements HystrixService {
 
     @HystrixCommand(fallbackMethod = "callEurekaClientFallback")
     public String callEurekaClient() {
-        return restTemplate.getForEntity("http://eureka-client/eureka/get-client", String.class).getBody();
+        return restTemplate.getForEntity("http://eureka-service/eureka/get-service", String.class).getBody();
     }
 
     private String callEurekaClientFallback() {

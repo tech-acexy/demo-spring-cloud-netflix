@@ -1,0 +1,2 @@
+# 请求eureka服务 通过ribbon客户端负载
+GET http://localhost:8080/ribbon/call-eureka-service
