@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>netflix-eureka-server</module>
-        <module>netflix-eureka-client</module>
+        <module>netflix-eureka-center</module>
+        <module>netflix-eureka-service</module>
         <module>netflix-ribbon-client</module>
         <module>netflix-hystrix-client</module>
     </modules>
