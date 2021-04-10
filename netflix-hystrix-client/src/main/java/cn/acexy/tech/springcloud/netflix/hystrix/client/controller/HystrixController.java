@@ -1,6 +1,7 @@
 package cn.acexy.tech.springcloud.netflix.hystrix.client.controller;
 
-import cn.acexy.tech.springcloud.netflix.hystrix.client.service.HystrixService;
+import cn.acexy.tech.springcloud.netflix.hystrix.client.service.HystrixUserService;
+import cn.acexy.tech.springcoud.common.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class HystrixController {
 
     @Autowired
-    private HystrixService hystrixService;
+    private HystrixUserService hystrixUserService;
 
-    @GetMapping(value = "call-eureka-client")
-    String callEurekaClient() {
-        return hystrixService.callEurekaClient();
+    @GetMapping(value = "get-user")
+    User getUser() {
+        return hystrixUserService.getUser();
     }
 }

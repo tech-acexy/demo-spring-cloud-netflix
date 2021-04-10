@@ -1,5 +1,6 @@
-package cn.acexy.tech.springcloud.netflix.ribbon.balanced.controller;
+package cn.acexy.tech.springcloud.netflix.ribbon.client.controller;
 
+import cn.acexy.tech.springcoud.common.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +19,8 @@ public class RibbonController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping(value = "call-eureka-service")
-    String callEurekaService() {
-        return restTemplate.getForEntity("http://eureka-service/eureka/get-service", String.class).getBody();
+    @GetMapping(value = "get-user")
+    User getUser() {
+        return restTemplate.getForObject("http://eureka-service/eureka/get-user", User.class);
     }
 }

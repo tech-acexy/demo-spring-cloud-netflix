@@ -1,4 +1,4 @@
-package cn.acexy.tech.springcloud.netflix.ribbon.balanced.bean;
+package cn.acexy.tech.springcloud.netflix.ribbon.client.bean;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

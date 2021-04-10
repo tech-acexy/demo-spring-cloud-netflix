@@ -1,4 +1,4 @@
-package cn.acexy.tech.springcloud.netflix.ribbon.balanced;
+package cn.acexy.tech.springcloud.netflix.ribbon.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
