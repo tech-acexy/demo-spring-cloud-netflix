@@ -1,7 +1,11 @@
+### 通过hystrix command获取user
+GET http://localhost:9001/hystrix/get-user-by-command
+Accept: application/json
+
+### 通过hystrix获取user
 GET http://localhost:9001/hystrix/get-user
 Accept: application/json
 
-###
-# 请求eureka服务 通过ribbon客户端负载
+### 请求eureka服务 通过ribbon客户端负载
 GET http://localhost:9000/ribbon/get-user
 Accept: application/json

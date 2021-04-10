@@ -15,7 +15,7 @@ public class Template {
 
     @Bean
     @LoadBalanced
-    RestTemplate getTemplate() {
+    public RestTemplate getTemplate() {
         return new RestTemplate();
     }
 }

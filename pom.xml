@@ -21,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring.boot.version>2.3.9.RELEASE</spring.boot.version>
-        <spring.cloud.version>Hoxton.RELEASE</spring.cloud.version>
+        <spring.cloud.version>Hoxton.SR10</spring.cloud.version>
         <current.project.version>0.0.1-SNAPSHOT</current.project.version>
     </properties>
 
