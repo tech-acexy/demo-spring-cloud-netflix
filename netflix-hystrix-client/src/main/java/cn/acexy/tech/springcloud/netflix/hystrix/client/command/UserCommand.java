@@ -14,21 +14,20 @@ import org.springframework.web.client.RestTemplate;
  *
  * @author : acexy@acexy.cn
  **/
-@Component
 public class UserCommand extends HystrixCommand<User> {
 
-    @Autowired
     private RestTemplate restTemplate;
 
     private static final Setter setter = Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("user"))
             .andCommandPropertiesDefaults(HystrixCommandProperties.Setter()
                     .withExecutionTimeoutEnabled(true)
-                    .withExecutionTimeoutInMilliseconds(2000)
+                    .withExecutionTimeoutInMilliseconds(5000)
                     .withFallbackEnabled(true)
             );
 
-    public UserCommand() {
+    public UserCommand(RestTemplate restTemplate) {
         super(setter);
+        this.restTemplate = restTemplate;
     }
 
     protected User run() {

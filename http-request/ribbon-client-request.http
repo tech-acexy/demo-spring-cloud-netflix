@@ -1,7 +1,3 @@
-### 通过hystrix command获取user
-GET http://localhost:9001/hystrix/get-user-by-command
-Accept: application/json
-
 ### 通过hystrix获取user
 GET http://localhost:9001/hystrix/get-user
 Accept: application/json
