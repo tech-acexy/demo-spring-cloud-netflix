@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class User {
 
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     private String name;
     private short age;

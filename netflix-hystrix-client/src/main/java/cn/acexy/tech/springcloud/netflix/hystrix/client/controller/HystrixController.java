@@ -1,6 +1,7 @@
 package cn.acexy.tech.springcloud.netflix.hystrix.client.controller;
 
 import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserCommand;
+import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserCommandAnnotation;
 import cn.acexy.tech.springcloud.netflix.hystrix.client.service.HystrixUserService;
 import cn.acexy.tech.springcoud.common.bean.User;
 import org.slf4j.Logger;
@@ -23,12 +24,15 @@ public class HystrixController {
     private HystrixUserService hystrixUserService;
 
     @Autowired
+    private UserCommandAnnotation userCommandAnnotation;
+
+    @Autowired
     private RestTemplate restTemplate;
 
     @GetMapping(value = "get-user")
     User getUser() throws ExecutionException, InterruptedException {
         UserCommand userCommand = new UserCommand(restTemplate);
-        int randomValue = (int) (Math.random() * 3) + 1;
+        int randomValue = (int) (Math.random() * 4) + 1;
         switch (randomValue) {
             case 1:
                 LOGGER.info("HystrixUserService.getUser");
@@ -45,6 +49,9 @@ public class HystrixController {
                     }
                 }).start();
                 return userFuture.get();
+            case 4:
+                LOGGER.info("UserCommandAnnotation getUser");
+                return userCommandAnnotation.getUser();
         }
         LOGGER.error("bad random value {}", randomValue);
         return null;
