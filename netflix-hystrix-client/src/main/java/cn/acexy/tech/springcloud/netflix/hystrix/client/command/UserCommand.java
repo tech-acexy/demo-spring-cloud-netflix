@@ -31,6 +31,7 @@ public class UserCommand extends HystrixCommand<User> {
         this.restTemplate = restTemplate;
     }
 
+    @Override
     protected User run() {
         return restTemplate.getForObject("http://eureka-service/eureka/get-user", User.class);
     }

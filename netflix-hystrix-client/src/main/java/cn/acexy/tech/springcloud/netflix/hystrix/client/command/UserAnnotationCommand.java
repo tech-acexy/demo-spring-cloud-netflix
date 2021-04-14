@@ -34,6 +34,7 @@ public class UserAnnotationCommand {
     }, fallbackMethod = "getFallback")
     public Future<User> getUserAsync() {
         return new AsyncResult<User>() {
+            @Override
             public User invoke() {
                 return restTemplate.getForObject("http://eureka-service/eureka/get-user", User.class);
             }

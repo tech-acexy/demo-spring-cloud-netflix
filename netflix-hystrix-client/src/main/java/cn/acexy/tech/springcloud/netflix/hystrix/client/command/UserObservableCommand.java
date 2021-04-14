@@ -36,15 +36,18 @@ public class UserObservableCommand extends HystrixObservableCommand<User> {
         this.restTemplate = restTemplate;
     }
 
+    @Override
     protected Observable<User> construct() {
 
         return Observable.create(
                 new SyncOnSubscribe<Object, User>() {
 
+                    @Override
                     protected Object generateState() {
                         return null;
                     }
 
+                    @Override
                     protected User next(Object state, Observer<? super User> observer) {
                         User user = restTemplate.getForObject("http://eureka-service/eureka/get-user", User.class);
                         observer.onNext(user);
@@ -61,10 +64,12 @@ public class UserObservableCommand extends HystrixObservableCommand<User> {
         return Observable.create(
                 new SyncOnSubscribe<Object, User>() {
 
+                    @Override
                     protected Object generateState() {
                         return null;
                     }
 
+                    @Override
                     protected User next(Object state, Observer<? super User> observer) {
                         User user = new User();
                         user.setName("UNKNOWN");
