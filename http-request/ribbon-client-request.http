@@ -1,3 +1,6 @@
+### hystrix cache
+GET http://localhost:9001/hystrix/get-user/test1
+
 ### 通过hystrix获取user
 GET http://localhost:9001/hystrix/get-user
 Accept: application/json

@@ -6,6 +6,7 @@ import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserAnnotationCo
 import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserObservableCommand;
 import cn.acexy.tech.springcloud.netflix.hystrix.client.service.HystrixUserService;
 import cn.acexy.tech.springcoud.common.bean.User;
+import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ import java.util.concurrent.Future;
 @RestController
 @RequestMapping(value = "hystrix")
 public class HystrixController {
+
     static final Logger LOGGER = LoggerFactory.getLogger(HystrixController.class);
 
     @Autowired
@@ -34,6 +36,38 @@ public class HystrixController {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    private User getUserFromObservable(Observable<User> observable, boolean isHot) throws InterruptedException {
+        if (isHot) {
+            final User[] users = new User[1];
+
+            observable.subscribe(new Observer<User>() {
+                public void onCompleted() {
+                    LOGGER.info("       request complated");
+                }
+
+                public void onError(Throwable throwable) {
+                    LOGGER.info("       request onError");
+                    LOGGER.info("       auto set fallback result");
+                    User user = new User();
+                    user.setName("UNKNOWN");
+                    users[0] = user;
+                }
+
+                public void onNext(User user) {
+                    LOGGER.info("       request onNext");
+                    users[0] = user;
+                }
+            });
+            LOGGER.info("       sleep 3s to wait request finish and get user");
+            Thread.sleep(3000);
+            return users[0];
+        } else {
+            BlockingObservable<User> blockingObservable = observable.toBlocking();
+            LOGGER.info("       observable.toBlocking");
+            return blockingObservable.first();
+        }
+    }
 
     @GetMapping(value = "get-user")
     User getUser() throws ExecutionException, InterruptedException {
@@ -91,38 +125,20 @@ public class HystrixController {
 
     @GetMapping(value = "get-user/{name}")
     User getUser(@PathVariable(name = "name") String name) {
-        return new UserCacheCommand(restTemplate, name).execute();
+
+        // 相同的Common处于同一个HystrixRequestContext中，将可以使用到缓存
+        HystrixRequestContext hystrixRequestContext = HystrixRequestContext.initializeContext();
+        UserCacheCommand userCacheCommand = new UserCacheCommand(restTemplate, name);
+        User firstRequestUser = userCacheCommand.execute();
+        LOGGER.info("request and get user name > {}", firstRequestUser.getName());
+
+        userCacheCommand = new UserCacheCommand(restTemplate, name);
+        User anotherRequestUser = userCacheCommand.execute();
+        LOGGER.info("do another request and get user name > {}", anotherRequestUser.getName());
+
+        LOGGER.info("firstRequest equals anotherRequest > {}", firstRequestUser.equals(anotherRequestUser));
+        hystrixRequestContext.close();
+        return anotherRequestUser;
     }
 
-    private User getUserFromObservable(Observable<User> observable, boolean isHot) throws InterruptedException {
-        if (isHot) {
-            final User[] users = new User[1];
-
-            observable.subscribe(new Observer<User>() {
-                public void onCompleted() {
-                    LOGGER.info("       request complated");
-                }
-
-                public void onError(Throwable throwable) {
-                    LOGGER.info("       request onError");
-                    LOGGER.info("       auto set fallback result");
-                    User user = new User();
-                    user.setName("UNKNOWN");
-                    users[0] = user;
-                }
-
-                public void onNext(User user) {
-                    LOGGER.info("       request onNext");
-                    users[0] = user;
-                }
-            });
-            LOGGER.info("       sleep 3s to wait request finish and get user");
-            Thread.sleep(3000);
-            return users[0];
-        } else {
-            BlockingObservable<User> blockingObservable = observable.toBlocking();
-            LOGGER.info("       observable.toBlocking");
-            return blockingObservable.first();
-        }
-    }
 }
