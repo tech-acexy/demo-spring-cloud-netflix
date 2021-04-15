@@ -1,5 +1,6 @@
 package cn.acexy.tech.springcloud.netflix.hystrix.client.controller;
 
+import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserCacheCommand;
 import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserCommand;
 import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserAnnotationCommand;
 import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserObservableCommand;
@@ -9,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -87,6 +89,10 @@ public class HystrixController {
         return null;
     }
 
+    @GetMapping(value = "get-user/{name}")
+    User getUser(@PathVariable(name = "name") String name) {
+        return new UserCacheCommand(restTemplate, name).execute();
+    }
 
     private User getUserFromObservable(Observable<User> observable, boolean isHot) throws InterruptedException {
         if (isHot) {
