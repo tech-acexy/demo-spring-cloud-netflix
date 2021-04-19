@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>common</module>
+        <module>netflix-common</module>
         <module>netflix-eureka-center</module>
         <module>netflix-eureka-service</module>
         <module>netflix-ribbon-client</module>

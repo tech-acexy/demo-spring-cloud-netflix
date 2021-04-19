@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>cn.acexy.tech.springcloud</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>netflix-common</artifactId>
             <version>${current.project.version}</version>
         </dependency>
     </dependencies>
