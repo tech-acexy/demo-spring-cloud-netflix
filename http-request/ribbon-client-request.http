@@ -1,3 +1,6 @@
+### feign
+GET http://localhost:9002/feign/get-user/
+
 ### hystrix cache
 GET http://localhost:9001/hystrix/get-user/test1
 

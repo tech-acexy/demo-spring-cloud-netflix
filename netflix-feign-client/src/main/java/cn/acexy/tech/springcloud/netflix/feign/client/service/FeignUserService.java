@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  * @author : acexy@acexy.cn
  **/
-@FeignClient("eureka-service")
+@FeignClient("eureka-service/eureka")
 public interface FeignUserService {
 
     @RequestMapping("get-user")
