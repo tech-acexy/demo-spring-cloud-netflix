@@ -15,6 +15,7 @@
         <module>netflix-eureka-service</module>
         <module>netflix-ribbon-client</module>
         <module>netflix-hystrix-client</module>
+        <module>netflix-feign-client</module>
     </modules>
 
     <properties>
@@ -46,9 +47,5 @@
 
         </dependencies>
     </dependencyManagement>
-
-    <build>
-
-    </build>
 
 </project>
