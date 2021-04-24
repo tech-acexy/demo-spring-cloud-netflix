@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import rx.Observable;
+import rx.Observer;
+import rx.observables.BlockingObservable;
 
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 @RestController
 @RequestMapping(value = "hystrix")

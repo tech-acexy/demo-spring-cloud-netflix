@@ -26,6 +26,7 @@
         <spring.boot.version>2.3.9.RELEASE</spring.boot.version>
         <spring.cloud.version>Hoxton.SR10</spring.cloud.version>
         <current.project.version>0.0.1-SNAPSHOT</current.project.version>
+        <feign-httpclient.version>11.1</feign-httpclient.version>
     </properties>
 
     <dependencyManagement>
@@ -45,6 +46,12 @@
                 <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-httpclient</artifactId>
+                <version>${feign-httpclient.version}</version>
             </dependency>
 
         </dependencies>

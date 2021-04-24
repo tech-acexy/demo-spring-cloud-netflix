@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  * @author : acexy@acexy.cn
  **/
-@FeignClient("feign-service/user")
+@FeignClient("feign-service")
 public interface AdvancedUserService extends FeignUserService {
 
 }

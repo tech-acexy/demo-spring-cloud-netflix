@@ -1,8 +1,14 @@
 ### advanced-feign-client
-GET http://localhost:9003/advanced-feign/user/get-user
+GET http://localhost:9003/advanced-feign-car/get-car
 
 ### advanced-feign-client
-GET http://localhost:9003/advanced-feign/user/get-user-by-name?name=张三
+GET http://localhost:9003/advanced-feign-car/get-car-by-owner?name=张三
+
+### advanced-feign-client
+GET http://localhost:9003/advanced-feign-user/get-user
+
+### advanced-feign-client
+GET http://localhost:9003/advanced-feign-user/get-user-by-name?name=张三
 
 ### feign-client
 GET http://localhost:9002/feign/get-user-from-feign

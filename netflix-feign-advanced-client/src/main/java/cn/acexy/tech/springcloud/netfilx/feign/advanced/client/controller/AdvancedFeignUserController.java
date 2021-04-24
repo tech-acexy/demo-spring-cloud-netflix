@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "advanced-feign/user")
+@RequestMapping(value = "advanced-feign-user")
 public class AdvancedFeignUserController {
 
     @Autowired
