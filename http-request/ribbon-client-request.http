@@ -1,5 +1,11 @@
-### feign
-GET http://localhost:9002/feign/get-user/
+### feign-client
+GET http://localhost:9002/feign/get-user-from-feign
+
+### feign-client
+GET http://localhost:9002/feign/get-user-by-name?name=张三
+
+### feign-client
+GET http://localhost:9002/feign/get-user
 
 ### hystrix cache
 GET http://localhost:9001/hystrix/get-user/test1

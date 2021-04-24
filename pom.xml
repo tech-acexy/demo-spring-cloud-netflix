@@ -16,6 +16,8 @@
         <module>netflix-ribbon-client</module>
         <module>netflix-hystrix-client</module>
         <module>netflix-feign-client</module>
+        <module>netflix-feign-service</module>
+        <module>netflix-feign-advanced-client</module>
     </modules>
 
     <properties>

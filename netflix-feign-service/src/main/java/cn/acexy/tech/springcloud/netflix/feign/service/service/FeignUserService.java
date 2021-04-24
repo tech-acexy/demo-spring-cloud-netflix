@@ -1,11 +1,11 @@
-package cn.acexy.tech.springcloud.netflix.feign.client.service;
+package cn.acexy.tech.springcloud.netflix.feign.service.service;
 
 import cn.acexy.tech.springcoud.common.bean.User;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient("feign-service/feign")
+@RequestMapping("feign")
 public interface FeignUserService {
 
     @GetMapping("get-user")

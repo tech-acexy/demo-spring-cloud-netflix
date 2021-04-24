@@ -15,6 +15,11 @@ public class User {
         this.age = (short) random.nextInt(100);
     }
 
+    public User(String name) {
+        this.name = name;
+        this.age = (short) random.nextInt(100);
+    }
+
     public String getName() {
         return name;
     }

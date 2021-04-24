@@ -1,21 +1,16 @@
-package cn.acexy.tech.springcloud.netflix.eureka.service;
+package cn.acexy.tech.springcloud.netfilx.feign.advanced.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-
-/**
- * 创建时间 : 2021/3/25 <br />
- *
- * @author : acexy@acexy.cn
- **/
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients
 @EnableDiscoveryClient
-public class EurekaServiceApp {
+public class FeignAdvancedClientApp {
 
     public static void main(String[] args) {
-        new SpringApplication(EurekaServiceApp.class).run(args);
+        SpringApplication.run(FeignAdvancedClientApp.class);
     }
-
 }
