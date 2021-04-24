@@ -1,6 +1,6 @@
 package cn.acexy.tech.springcloud.netflix.hystrix.client.command;
 
-import cn.acexy.tech.springcoud.common.bean.User;
+import cn.acexy.tech.springcloud.common.bean.User;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;

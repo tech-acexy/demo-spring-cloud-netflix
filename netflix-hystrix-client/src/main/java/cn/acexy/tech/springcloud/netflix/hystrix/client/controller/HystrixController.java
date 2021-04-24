@@ -5,7 +5,7 @@ import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserCommand;
 import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserAnnotationCommand;
 import cn.acexy.tech.springcloud.netflix.hystrix.client.command.UserObservableCommand;
 import cn.acexy.tech.springcloud.netflix.hystrix.client.service.HystrixUserService;
-import cn.acexy.tech.springcoud.common.bean.User;
+import cn.acexy.tech.springcloud.common.bean.User;
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

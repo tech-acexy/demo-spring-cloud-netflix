@@ -1,7 +1,7 @@
 package cn.acexy.tech.springcloud.netflix.hystrix.client.service.impl;
 
 import cn.acexy.tech.springcloud.netflix.hystrix.client.service.HystrixUserService;
-import cn.acexy.tech.springcoud.common.bean.User;
+import cn.acexy.tech.springcloud.common.bean.User;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

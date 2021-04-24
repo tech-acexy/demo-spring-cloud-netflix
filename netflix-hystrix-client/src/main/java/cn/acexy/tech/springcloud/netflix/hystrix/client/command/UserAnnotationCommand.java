@@ -1,7 +1,7 @@
 package cn.acexy.tech.springcloud.netflix.hystrix.client.command;
 
 
-import cn.acexy.tech.springcoud.common.bean.User;
+import cn.acexy.tech.springcloud.common.bean.User;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.netflix.hystrix.contrib.javanica.command.AsyncResult;

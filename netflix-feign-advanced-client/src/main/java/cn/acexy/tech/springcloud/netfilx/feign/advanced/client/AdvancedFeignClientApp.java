@@ -8,9 +8,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableFeignClients
 @EnableDiscoveryClient
-public class FeignAdvancedClientApp {
+public class AdvancedFeignClientApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(FeignAdvancedClientApp.class);
+        SpringApplication.run(AdvancedFeignClientApp.class);
     }
 }

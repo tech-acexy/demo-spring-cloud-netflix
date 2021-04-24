@@ -1,9 +1,9 @@
 package cn.acexy.tech.springcloud.netfilx.feign.advanced.client.service;
 
-import cn.acexy.tech.springcoud.common.bean.User;
+import cn.acexy.tech.springcloud.common.bean.User;
+import cn.acexy.tech.springcloud.feign.service.FeignUserService;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -11,12 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  * @author : acexy@acexy.cn
  **/
-@FeignClient("eureka-service/eureka")
-public interface AdvancedUserService {
+@FeignClient("feign-service/user")
+public interface AdvancedUserService extends FeignUserService {
 
-    @GetMapping("get-user")
-    User getUser();
-
-    @GetMapping("get-user-by-name")
-    User getUserByName(@RequestParam(name = "name") String name);
 }

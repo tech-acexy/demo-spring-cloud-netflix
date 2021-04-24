@@ -1,6 +1,6 @@
 package cn.acexy.tech.springcloud.netflix.eureka.service.controller;
 
-import cn.acexy.tech.springcoud.common.bean.User;
+import cn.acexy.tech.springcloud.common.bean.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;

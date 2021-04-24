@@ -2,7 +2,7 @@ package cn.acexy.tech.springcloud.netflix.feign.client.controller;
 
 import cn.acexy.tech.springcloud.netflix.feign.client.service.EurekaUserService;
 import cn.acexy.tech.springcloud.netflix.feign.client.service.FeignUserService;
-import cn.acexy.tech.springcoud.common.bean.User;
+import cn.acexy.tech.springcloud.common.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

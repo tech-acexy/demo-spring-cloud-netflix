@@ -1,4 +1,4 @@
-package cn.acexy.tech.springcoud.common.bean;
+package cn.acexy.tech.springcloud.common.bean;
 
 import java.util.Random;
 import java.util.UUID;
