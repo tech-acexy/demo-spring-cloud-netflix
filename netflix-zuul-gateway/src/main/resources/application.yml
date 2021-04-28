@@ -1,0 +1,13 @@
+server:
+  port: 8908
+
+spring:
+  application:
+    name: zuul-gateway
+  profiles:
+    include: zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://acexy-tech.eureka:7000/eureka

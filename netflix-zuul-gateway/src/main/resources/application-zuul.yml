@@ -1,0 +1,8 @@
+zuul:
+  routes:
+    feign-client:
+      path: /feign-client/**
+      url: http://localhost:9002/
+    feign-service:
+      path: /feign-service/**
+      serviceId: feign-service

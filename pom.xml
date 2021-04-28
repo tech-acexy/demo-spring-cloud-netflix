@@ -18,6 +18,7 @@
         <module>netflix-feign-client</module>
         <module>netflix-feign-service</module>
         <module>netflix-feign-advanced-client</module>
+        <module>netflix-zuul-gateway</module>
     </modules>
 
     <properties>

@@ -1,3 +1,9 @@
+### use gatewap
+GET http://localhost:8908/feign-service/user/get-user
+
+### use gatewap
+GET http://localhost:8908/feign-client/feign/get-user-from-feign
+
 ### advanced-feign-client
 GET http://localhost:9003/advanced-feign-car/get-car
 
