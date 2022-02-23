@@ -25,7 +25,7 @@ public class EurekaUserController {
 
     @GetMapping(value = "get-user")
     User getUser() throws InterruptedException {
-        int sleepMillis = random.nextInt(3000);
+        int sleepMillis = random.nextInt(7000);
         LOGGER.info("will sleep ms {} to finish this request", sleepMillis);
         Thread.sleep(sleepMillis);
         return new User();

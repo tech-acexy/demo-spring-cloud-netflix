@@ -8,8 +8,16 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://acexy-tech.eureka:7000/eureka
+      defaultZone: http://localhost:7000/eureka
   instance:
     instance-id: ${spring.application.name}-${random.int[1000,9999]}
     prefer-ip-address: true
+
+# 默认feign-client超时时间为1秒
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
 

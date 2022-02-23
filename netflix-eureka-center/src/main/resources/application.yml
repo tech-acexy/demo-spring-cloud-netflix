@@ -11,7 +11,7 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-    service-url:
-      defaultZone: http://acexy-tech.eureka:7000/eureka
+#    service-url:
+#      defaultZone: http://acexy-tech.eureka:7000/eureka
   server:
     enable-self-preservation: false
