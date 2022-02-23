@@ -2,11 +2,6 @@
 
 spring-cloud 基于Netflix相关模块
 
-  ```
-  配置host
-  acexy-tech.eureka
-  ```
-
 - eureka-center 
 
   ```

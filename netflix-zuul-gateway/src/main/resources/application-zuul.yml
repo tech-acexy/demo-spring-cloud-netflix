@@ -8,8 +8,10 @@ zuul:
 #    feign-service:
 #      path: /feign-service/**
 #      serviceId: feign-service
+
 # 结合eureka 配置 2 等效同上
 #    feign-service: /feign-service/**
+
 # 结合eureka 配置 3
 # 默认将自动配置 serviceId: path/** serviceId = path 类型的路由规则，所以不需要配置任何内容
 # 此时如果不想要某个路径被访问到 通过zuul.ignore-services来设置一个忽略规则以防止自动创建
