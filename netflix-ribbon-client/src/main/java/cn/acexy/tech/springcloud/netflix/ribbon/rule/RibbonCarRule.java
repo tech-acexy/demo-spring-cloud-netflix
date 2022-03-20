@@ -1,13 +1,12 @@
 package cn.acexy.tech.springcloud.netflix.ribbon.rule;
 
 import com.netflix.loadbalancer.*;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * 创建时间 : 2022/3/20 <br />
- * 配置Ribbon全局负责均衡策略
+ * 自定义的Ribbon规则不能处于启动类可以直接扫描的package中
  *
  * @author : acexy@acexy.cn
  **/

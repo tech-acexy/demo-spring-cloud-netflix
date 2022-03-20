@@ -17,7 +17,6 @@ import org.springframework.cloud.netflix.ribbon.RibbonClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-
 // 配置默认Ribbon策略为RandomRule
 @RibbonClients(defaultConfiguration = RandomRule.class)
 public class RibbonClientApp {

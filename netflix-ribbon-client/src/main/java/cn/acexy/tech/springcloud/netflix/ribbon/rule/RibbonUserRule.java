@@ -2,7 +2,6 @@ package cn.acexy.tech.springcloud.netflix.ribbon.rule;
 
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.*;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

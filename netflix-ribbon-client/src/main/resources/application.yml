@@ -5,10 +5,10 @@ spring:
   application:
     name: ribbon-client
 
-# 自定义serviceId负载规则 (若指定了全局负载均衡策略这种配置会失效，需要使用java注解)
+# 自定义serviceId负载规则 (若指定了全局负载均衡策略这种配置会失效，需要使用java注解 java对serviceId直接指定 > 全局 > 配置文件)
 feign-service:
   ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
 
 ribbon:
   eureka:
