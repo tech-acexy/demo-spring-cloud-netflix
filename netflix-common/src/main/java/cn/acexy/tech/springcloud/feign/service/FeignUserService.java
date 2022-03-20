@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping(value = "user")
 public interface FeignUserService {
 
-    @GetMapping("get-user")
-    User getUser();
+    @GetMapping("get")
+    User get();
 
-    @GetMapping("get-user-by-name")
-    User getUserByName(@RequestParam(name = "name") String name);
+    @GetMapping("get-by-name")
+    User getByName(@RequestParam(name = "name") String name);
 }

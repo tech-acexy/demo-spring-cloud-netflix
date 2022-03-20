@@ -10,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author : acexy@acexy.cn
  **/
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"cn.acexy.tech"})
 @EnableDiscoveryClient
 public class EurekaServiceApp {
 

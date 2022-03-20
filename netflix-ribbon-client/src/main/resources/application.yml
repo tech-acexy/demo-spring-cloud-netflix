@@ -5,6 +5,16 @@ spring:
   application:
     name: ribbon-client
 
+# 自定义serviceId负载规则 (若指定了全局负载均衡策略这种配置会失效，需要使用java注解)
+feign-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+ribbon:
+  eureka:
+    enabled: true
+
+
 eureka:
   client:
     service-url:

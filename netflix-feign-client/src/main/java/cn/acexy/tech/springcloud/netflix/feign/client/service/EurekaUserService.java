@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  * @author : acexy@acexy.cn
  **/
-@FeignClient("eureka-service/eureka")
+@FeignClient("eureka-service/service")
 public interface EurekaUserService {
 
     @GetMapping("get-user")

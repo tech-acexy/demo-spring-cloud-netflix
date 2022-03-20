@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "car")
 public interface FeignCarService {
 
-    @GetMapping(value = "get-car")
-    Car getCar();
+    @GetMapping(value = "get")
+    Car get();
 
-    @GetMapping(value = "get-car-by-owner")
-    Car getCarByOwner(@SpringQueryMap User owner);
+    @GetMapping(value = "get-by-owner")
+    Car getByOwner(@SpringQueryMap User owner);
 }

@@ -15,8 +15,6 @@ eureka:
 #    告知eureka注册中心 客户端将已多少秒的间隔开始发送心跳以便保证自己处于活跃状态
       lease-renewal-interval-in-seconds: 5
 
-
-
   instance:
     instance-id: ${spring.application.name}-${random.int[1000,9999]}
     prefer-ip-address: true

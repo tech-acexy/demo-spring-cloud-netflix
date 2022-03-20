@@ -11,12 +11,12 @@ public class FeignUserController implements FeignUserService {
 
     final static Logger LOGGER = LoggerFactory.getLogger(FeignUserController.class);
 
-    public User getUser() {
+    public User get() {
         LOGGER.info("get request return user");
         return new User();
     }
 
-    public User getUserByName(String name) {
+    public User getByName(String name) {
         LOGGER.info("get request return user with name");
         return new User(name);
     }

@@ -17,11 +17,11 @@ public class AdvancedFeignUserController {
 
     @GetMapping(value = "get-user")
     public User getUser() {
-        return advancedUserService.getUser();
+        return advancedUserService.get();
     }
 
     @GetMapping(value = "get-user-by-name")
     public User getUserByName(@RequestParam(name = "name") String name) {
-        return advancedUserService.getUserByName(name);
+        return advancedUserService.getByName(name);
     }
 }
