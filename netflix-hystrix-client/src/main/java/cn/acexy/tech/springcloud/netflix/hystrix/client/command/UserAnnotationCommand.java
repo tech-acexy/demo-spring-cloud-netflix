@@ -25,7 +25,7 @@ public class UserAnnotationCommand {
             @HystrixProperty(name = "execution.timeout.enabled", value = "true")
     }, fallbackMethod = "getFallback")
     public User getUser() {
-        return restTemplate.getForObject("http://eureka-service/eureka/get-user", User.class);
+        return restTemplate.getForObject("http://eureka-service/user/get", User.class);
     }
 
     @HystrixCommand(commandProperties = {
@@ -36,7 +36,7 @@ public class UserAnnotationCommand {
         return new AsyncResult<User>() {
             @Override
             public User invoke() {
-                return restTemplate.getForObject("http://eureka-service/eureka/get-user", User.class);
+                return restTemplate.getForObject("http://eureka-service/user/get", User.class);
             }
         };
     }

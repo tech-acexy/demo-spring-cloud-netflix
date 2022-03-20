@@ -19,7 +19,7 @@ public class HystrixUserServiceImpl implements HystrixUserService {
 
     @HystrixCommand(fallbackMethod = "getUserFailed")
     public User getUser() {
-        return restTemplate.getForObject("http://eureka-service/eureka/get-user", User.class);
+        return restTemplate.getForObject("http://eureka-service/user/get", User.class);
     }
 
     private User getUserFailed() {

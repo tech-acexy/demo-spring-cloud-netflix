@@ -30,7 +30,7 @@ public class UserCacheCommand extends HystrixCommand<User> {
 
     @Override
     protected User run() {
-        User user = restTemplate.getForObject("http://eureka-service/eureka/get-user", User.class);
+        User user = restTemplate.getForObject("http://eureka-service/user/get", User.class);
         LOGGER.info("service response user name is > {} query user name is > {}", user.getName(), name);
         return user;
     }

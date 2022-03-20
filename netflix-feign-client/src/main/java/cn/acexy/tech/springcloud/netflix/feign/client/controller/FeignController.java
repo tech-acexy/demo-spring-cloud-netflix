@@ -24,18 +24,18 @@ public class FeignController {
     @Autowired
     FeignUserService feignUserService;
 
-    @GetMapping(value = "get-user")
-    User getUser() {
-        return eurekaUserService.getUser();
+    @GetMapping(value = "get-from-eureka")
+    User getFromEureka() {
+        return eurekaUserService.get();
     }
 
-    @GetMapping(value = "get-user-by-name")
-    User getUserByName(@RequestParam(name = "name") String name) {
-        return eurekaUserService.getUserByName(name);
+    @GetMapping(value = "get-by-name-from-eureka")
+    User getByNameFromEureka(@RequestParam(name = "name") String name) {
+        return eurekaUserService.getByName(name);
     }
 
-    @GetMapping(value = "get-user-from-feign")
-    User getUserFromFeign() {
-        return feignUserService.getUser();
+    @GetMapping(value = "get-from-feign")
+    User getFromFeign() {
+        return feignUserService.get();
     }
 }

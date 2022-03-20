@@ -49,7 +49,7 @@ public class UserObservableCommand extends HystrixObservableCommand<User> {
 
                     @Override
                     protected User next(Object state, Observer<? super User> observer) {
-                        User user = restTemplate.getForObject("http://eureka-service/eureka/get-user", User.class);
+                        User user = restTemplate.getForObject("http://eureka-service/user/get", User.class);
                         observer.onNext(user);
                         observer.onCompleted();
                         return null;
